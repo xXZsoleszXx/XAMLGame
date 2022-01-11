@@ -1,0 +1,73 @@
+﻿<Window x:Class="XAMLGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XAMLGame"
+        mc:Ignorable="d"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        Title="Reakció játék" Height="450" Width="600" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Margin="0,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="122*"/>
+                    <ColumnDefinition Width="211*"/>
+                </Grid.ColumnDefinitions>
+
+                <fa:ImageAwesome x:Name="balkep" Icon="Check"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center"
+                                 Margin="50,128" Grid.ColumnSpan="2"/>
+                <fa:ImageAwesome x:Name="jobbkep" Icon="Microchip"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Center" Grid.Column="2" Margin="0,57"/>
+            </Grid>
+            <WrapPanel HorizontalAlignment="Center" Margin="5">
+                <Label Content="Idő:"/>
+                <Label x:Name="lblido" Content="00:00"/>
+                <Label Content="Pontszám: "/>
+                <Label x:Name="lblpont"/>
+                <Label Content="Reakcióidő: "/>
+                <Label x:Name="lblreakcio" Content="0/0"/>
+                
+            </WrapPanel>
+
+            <Button x:Name="btnIgen" Grid.Row="2" HorizontalAlignment="Left" Margin="5" Padding="10,5" Click="btnIgen_Click">
+                <StackPanel Orientation="Horizontal">
+                    <fa:FontAwesome Icon="ArrowLeft" Margin="0,4,10,0"/>
+                    <TextBlock Text="Igen" Margin="0,0,0,3"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnNem" Grid.Row="2" HorizontalAlignment="Center" Margin="5" Padding="10,5" Click="btnNem_Click">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Nem" Margin="0,0,0,3"/>
+                    <fa:FontAwesome Icon="ArrowRight" Margin="10,4,0,0"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="btnInditas" Grid.Row="2" HorizontalAlignment="Right" Margin="5" Padding="10,5" Click="btnInditas_Click">
+                <StackPanel Orientation="Horizontal">
+                    <fa:FontAwesome Icon="ArrowUp" Margin="0,4,10,0"/>
+                    <TextBlock Text="inditas" Margin="0,0,0,3"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+
+        <ListBox Width="150" Margin="10,0,0,5">
+
+        </ListBox>
+    </Grid>
+</Window>
